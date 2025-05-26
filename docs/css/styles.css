@@ -19,17 +19,20 @@ h1 {
 .container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center; /* ✅ centers the boxes */
+  gap: 20px;               /* ✅ adds space between them */
 }
 
 .box {
   border: 2px solid #d7ccc8;
   background-color: #fff3e0;
   padding: 15px;
-  margin-bottom: 20px;
   border-radius: 8px;
-  width: 100%;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+  width: 100%; /* default mobile */
+
+  /* Fix vertical stacking gap */
+  margin-bottom: 20px;
 }
 
 .box h2 {
@@ -41,14 +44,14 @@ h1 {
   border-radius: 6px;
 }
 
-/* Tablet view */
-@media (min-width: 768px) and (max-width: 991px) {
+/* Tablet */
+@media (min-width: 768px) {
   .box {
-    width: 48%;
+    width: 45%;
   }
 }
 
-/* Desktop view */
+/* Desktop */
 @media (min-width: 992px) {
   .box {
     width: 30%;
